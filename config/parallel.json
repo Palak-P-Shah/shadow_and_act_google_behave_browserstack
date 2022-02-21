@@ -1,0 +1,20 @@
+{
+  "user": "palakshah_rcAxD5",
+  "key": "s2rqmyxFs8r999bzvGXJ",
+
+  "capabilities": {
+    "build": "behave-browserstack",
+    "name": "parallel_test",
+    "browserstack.debug": true
+  },
+
+  "environments": [{
+    "browser": "chrome"
+  },{
+    "browser": "firefox"
+  },{
+    "browser": "safari"
+  },{
+    "browser": "internet explorer"
+  }]
+}

@@ -1,0 +1,15 @@
+{
+  "user": "palakshah_rcAxD5",
+  "key": "s2rqmyxFs8r999bzvGXJ",
+
+  "capabilities": {
+    "build": "behave-browserstack",
+    "name": "local_test",
+    "browserstack.debug": true,
+    "browserstack.local": true
+  },
+
+  "environments": [{
+    "browser": "chrome"
+  }]
+}

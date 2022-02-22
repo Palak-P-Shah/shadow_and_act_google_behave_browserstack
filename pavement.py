@@ -24,7 +24,7 @@ def run_behave_test(config, feature, task_id=0):
 @consume_nargs(1)
 def run(args):
     """Run single, local and parallel test using different config."""
-    if args[0] in ('single', 'local'):
+    if args[0] in ('google_shadowandact_search', 'local'):
         run_behave_test(args[0], args[0])
     else:
         jobs = []

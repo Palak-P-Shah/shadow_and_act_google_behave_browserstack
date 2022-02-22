@@ -41,6 +41,10 @@ def stop_local():
 
 
 def before_feature(context, feature):
+    build_name = os.getenv("BROWSERSTACK_BUILD_NAME")
+    desired_capabilities = {
+        'build': build_name  # CI/CD job or build name
+    }
     desired_capabilities = CONFIG['environments'][TASK_ID]
 
     for key in CONFIG["capabilities"]:

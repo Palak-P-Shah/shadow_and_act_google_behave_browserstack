@@ -3,7 +3,7 @@
   "key": "s2rqmyxFs8r999bzvGXJ",
 
   "capabilities": {
-    "build": "behave-browserstack",
+
     "name": "From Jenkins Run Verify Shadow & Act text in google search page, launch the app shadowandact.com from the search results and verify entire film page on windows desktop with chrome browser",
     "browserstack.debug": true
   },

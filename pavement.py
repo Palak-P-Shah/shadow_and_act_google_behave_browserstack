@@ -3,7 +3,7 @@ from paver.setuputils import setup
 import threading, os, platform
 
 setup(
-    name = "behave-browserstack",
+    name = "From Jenkins Run Verify Shadow & Act text in google search page, launch the app shadowandact.com from the search results and verify entire film page on windows desktop with chrome browser",
     version = "0.1.0",
     author = "BrowserStack",
     author_email = "support@browserstack.com",

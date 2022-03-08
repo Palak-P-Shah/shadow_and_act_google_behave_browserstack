@@ -3,7 +3,7 @@
   "key": "s2rqmyxFs8r999bzvGXJ",
 
   "capabilities": {
-    "build": "test build through google.com for shadowandact.com app",
+    "build": "test build through google.com for shadowandact.com app film page",
     "name": "behave-browserstack",
     "browserstack.debug": true
   },

@@ -48,7 +48,10 @@ def test():
 
 @task
 def run_google_test(task_id=0):
-    sh('SET CONFIG_FILE=config/%s.json & SET TASK_ID=%s & behave features/%s.feature' % ("google_shadowandact_search", task_id, "google_shadowandact_search"))
+    if platform.system() == 'Windows':
+        sh('SET CONFIG_FILE=config/%s.json & SET TASK_ID=%s & behave features/%s.feature' % ("google_shadowandact_search", task_id, "google_shadowandact_search"))
+    else:
+        sh('export CONFIG_FILE=config/%s.json && export TASK_ID=%s && behave features/%s.feature' % ("google_shadowandact_search", task_id, "google_shadowandact_search"))
 
 
 @task

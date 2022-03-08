@@ -44,7 +44,8 @@ def before_feature(context, feature):
     username = os.getenv("BROWSERSTACK_USERNAME")
     access_key = os.getenv("BROWSERSTACK_ACCESS_KEY")
     build_name = os.getenv("BROWSERSTACK_BUILD_NAME")
-
+    options = webdriver.ChromeOptions()
+    options.add_argument("--disable-notifications")
     desired_capabilities = {
         'os': 'Windows',
         'os_version': '10',
@@ -58,7 +59,8 @@ def before_feature(context, feature):
 
     context.browser = webdriver.Remote(
         desired_capabilities=desired_capabilities,
-        command_executor="http://%s:%s@hub.browserstack.com/wd/hub" % (BROWSERSTACK_USERNAME, BROWSERSTACK_ACCESS_KEY)
+        command_executor="http://%s:%s@hub.browserstack.com/wd/hub" % (BROWSERSTACK_USERNAME, BROWSERSTACK_ACCESS_KEY),
+        options = options
     )
 
 

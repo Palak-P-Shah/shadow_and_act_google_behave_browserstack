@@ -48,8 +48,8 @@ def navigate_to_google_page_on_mobile(driver):
 def search_keyword(driver, website_name):
     print("function called search_keyword")
     WebDriverWait(driver, 40).until(ec.presence_of_element_located((
-        By.XPATH, "//input[@title='Search']")))
-    search_text_box = driver.find_element(By.XPATH, "//input[@title='Search']")
+        By.XPATH, "//input[@name='q']")))
+    search_text_box = driver.find_element(By.XPATH, "//input[@name='q']")
     search_text_box.send_keys(website_name)
     search_text_box.send_keys(Keys.RETURN)
     time.sleep(2)

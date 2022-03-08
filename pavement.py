@@ -37,6 +37,7 @@ def run(args):
         for th in jobs:
          th.join()
 
+
 @task
 def test():
     """Run all tests"""
@@ -44,6 +45,15 @@ def test():
     sh("paver run local")
     sh("paver run parallel")
 
+
 @task
 def run_google_test(task_id=0):
     sh('SET CONFIG_FILE=config/%s.json & SET TASK_ID=%s & behave features/%s.feature' % ("google_shadowandact_search", task_id, "google_shadowandact_search"))
+
+
+@task
+def run_video_injection_test(task_id=0):
+    if platform.system() == 'Windows':
+        sh('SET CONFIG_FILE=config/%s.json & SET TASK_ID=%s & behave features/%s.feature' % ("google_shadowandact_search", task_id, "google_shadowandact_search"))
+    else:
+        sh('export CONFIG_FILE=config/%s.json && export TASK_ID=%s && behave features/%s.feature' % ("google_shadowandact_search", task_id, "google_shadowandact_search"))

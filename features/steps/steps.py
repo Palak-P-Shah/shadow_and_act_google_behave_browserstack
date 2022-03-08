@@ -32,6 +32,16 @@ def step_impl(context):
     navigate_to_google_page(context.browser)
 
 
+@given('on android mobile the chrome browser is launched and navigating to the Google.com page')
+def step_impl(context):
+    navigate_to_google_page_on_mobile(context.browser)
+
+
+@given('on apple iphone mobile the safari browser is launched and navigating to the Google.com page')
+def step_impl(context):
+    navigate_to_google_page_on_mobile(context.browser)
+
+
 @then('navigate to the Google.com page')
 def step_impl(context):
     navigate_to_google_page(context.browser)

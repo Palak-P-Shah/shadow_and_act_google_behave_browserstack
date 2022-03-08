@@ -44,30 +44,17 @@ def before_feature(context, feature):
     username = os.getenv("BROWSERSTACK_USERNAME")
     access_key = os.getenv("BROWSERSTACK_ACCESS_KEY")
     build_name = os.getenv("BROWSERSTACK_BUILD_NAME")
-    # browserstack_local = os.getenv("BROWSERSTACK_LOCAL")
-    # browserstack_local_identifier = os.getenv("BROWSERSTACK_LOCAL_IDENTIFIER")
 
     desired_capabilities = {
         'os': 'Windows',
         'os_version': '10',
         'browser': 'chrome',
         'browser_version': 'latest',
-        'name': 'BStack-[Jenkins] behave sample Test using google search for shadowandact.com app testing',  # test name
+        'name': 'BStack-[Jenkins] behave sample Test using google search for shadowandact.com app veirfy film page',  # test name
         'build': build_name,  # CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
-        # 'browserstack.local': browserstack_local,
-        # 'browserstack.localIdentifier': browserstack_local_identifier,
         'browserstack.user': username,
         'browserstack.key': access_key
     }
-
-    # desired_capabilities = CONFIG['environments'][TASK_ID]
-    #
-    # for key in CONFIG["capabilities"]:
-    #     if key not in desired_capabilities:
-    #         desired_capabilities[key] = CONFIG["capabilities"][key]
-    #
-    # if "browserstack.local" in desired_capabilities and desired_capabilities["browserstack.local"]:
-    #     start_local()
 
     context.browser = webdriver.Remote(
         desired_capabilities=desired_capabilities,

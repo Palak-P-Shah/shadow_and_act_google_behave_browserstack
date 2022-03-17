@@ -37,12 +37,6 @@ def navigate_to_google_page(driver):
     driver.get("https://google.com")
     time.sleep(2)
     print(driver.title)
-
-
-def navigate_to_google_page_on_mobile(driver):
-    driver.get("https://google.com")
-    time.sleep(2)
-    print(driver.title)
     try:
         driver.switch_to.frame(0)
         driver.find_element_by_id("introAgreeButton").click()
@@ -50,6 +44,13 @@ def navigate_to_google_page_on_mobile(driver):
         print("clicked on google pop-up")
     except NoSuchElementException:
         print("No pop-up from Google")
+
+
+def navigate_to_google_page_on_mobile(driver):
+    driver.get("https://google.com")
+    time.sleep(2)
+    print(driver.title)
+
 
 
 def search_keyword(driver, website_name):

@@ -46,6 +46,8 @@ def before_feature(context, feature):
     build_name = os.getenv("BROWSERSTACK_BUILD_NAME")
     options = webdriver.ChromeOptions()
     options.add_argument("--disable-notifications")
+    options.add_argument("--disable-popup-blocking")
+    options.add_argument("test-type")
     desired_capabilities = {
         'os': 'Windows',
         'os_version': '10',

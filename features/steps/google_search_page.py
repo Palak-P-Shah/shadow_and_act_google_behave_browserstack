@@ -38,9 +38,9 @@ def navigate_to_google_page(driver):
     time.sleep(2)
     print(driver.title)
     try:
-        # time.sleep(2)
+        time.sleep(2)
         # WebDriverWait(driver, 40).until((ec.frame_to_be_available_and_switch_to_it(0)))
-        driver.switch_to.frame(1)
+        driver.switch_to.frame(0)
     except NoSuchFrameException:
         print("No frame popup exists")
     try:

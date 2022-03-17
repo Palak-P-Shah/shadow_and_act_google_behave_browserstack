@@ -56,14 +56,14 @@ def before_feature(context, feature):
         'browserstack.user': username,
         'browserstack.key': access_key
     }
-    # desired_capabilities["chromeOptions"] = {}
-    # desired_capabilities["chromeOptions"]["excludeSwitches"] = ["disable-popup-blocking"]
+    desired_capabilities["chromeOptions"] = {}
+    desired_capabilities["chromeOptions"]["excludeSwitches"] = ["disable-popup-blocking"]
     context.browser = webdriver.Remote(
         desired_capabilities=desired_capabilities,
         command_executor="http://%s:%s@hub.browserstack.com/wd/hub" % (BROWSERSTACK_USERNAME, BROWSERSTACK_ACCESS_KEY),
-        options = options
+        options=options
     )
-
+    print("desired cap ", desired_capabilities)
 
 def after_feature(context, feature):
     if context.failed is True:

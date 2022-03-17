@@ -42,14 +42,14 @@ def navigate_to_google_page(driver):
         # WebDriverWait(driver, 40).until((ec.frame_to_be_available_and_switch_to_it(0)))
         driver.switch_to.frame(0)
     except NoSuchFrameException:
-            print("No frame popup exists")
+        print("No frame popup exists")
     try:
         tmp = driver.find_element(By.ID, "introAgreeButton")
         tmp.click()
         # driver.find_element_by_id("introAgreeButton").click()
         driver.switch_to.default_content()
     except NoSuchElementException:
-        print("No Such Element as frame exists")
+        print("No Such Element as no frame exists")
     # except NoSuchFrameException:
     #     print("No pop-up from Google")
     # try:

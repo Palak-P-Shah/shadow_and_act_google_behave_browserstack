@@ -39,8 +39,8 @@ def navigate_to_google_page(driver):
     print(driver.title)
     time.sleep(2)
     try:
-        WebDriverWait(driver, 40).until(ec.frame_to_be_available_and_switch_to_it(0))
-        # driver.switch_to.frame(0)
+        # WebDriverWait(driver, 40).until(ec.frame_to_be_available_and_switch_to_it(0))
+        driver.switch_to.frame(0)
         driver.find_element(By.ID, "introAgreeButton").click()
         # driver.find_element_by_id("introAgreeButton").click()
         driver.switch_to.default_content()
@@ -61,7 +61,6 @@ def navigate_to_google_page_on_mobile(driver):
     driver.get("https://google.com")
     time.sleep(2)
     print(driver.title)
-
 
 
 def search_keyword(driver, website_name):

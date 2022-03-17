@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, NoSuchFrameException
 
 import time
 
@@ -35,17 +35,16 @@ import time
 def navigate_to_google_page(driver):
     driver.maximize_window()
     driver.get("https://google.com")
-    # time.sleep(2)
-    print(driver.title)
     time.sleep(2)
-    # try:
-    #     # WebDriverWait(driver, 40).until(ec.frame_to_be_available_and_switch_to_it(0))
-    #     driver.switch_to.frame(0)
-    #     driver.find_element(By.ID, "introAgreeButton").click()
-    #     # driver.find_element_by_id("introAgreeButton").click()
-    #     driver.switch_to.default_content()
-    # except NoSuchElementException:
-    #     print("No pop-up from Google")
+    print(driver.title)
+    try:
+        # WebDriverWait(driver, 40).until(ec.frame_to_be_available_and_switch_to_it(0))
+        driver.switch_to.frame(0)
+        driver.find_element(By.ID, "introAgreeButton").click()
+        # driver.find_element_by_id("introAgreeButton").click()
+        driver.switch_to.default_content()
+    except NoSuchFrameException:
+        print("No pop-up from Google")
     # try:
     #     WebDriverWait(driver, 40).until(ec.frame_to_be_available_and_switch_to_it(0))
     #     driver.switch_to.frame(0)

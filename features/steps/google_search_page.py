@@ -38,14 +38,14 @@ def navigate_to_google_page(driver):
     # time.sleep(2)
     print(driver.title)
     time.sleep(2)
-    try:
-        # WebDriverWait(driver, 40).until(ec.frame_to_be_available_and_switch_to_it(0))
-        driver.switch_to.frame(0)
-        driver.find_element(By.ID, "introAgreeButton").click()
-        # driver.find_element_by_id("introAgreeButton").click()
-        driver.switch_to.default_content()
-    except NoSuchElementException:
-        print("No pop-up from Google")
+    # try:
+    #     # WebDriverWait(driver, 40).until(ec.frame_to_be_available_and_switch_to_it(0))
+    #     driver.switch_to.frame(0)
+    #     driver.find_element(By.ID, "introAgreeButton").click()
+    #     # driver.find_element_by_id("introAgreeButton").click()
+    #     driver.switch_to.default_content()
+    # except NoSuchElementException:
+    #     print("No pop-up from Google")
     # try:
     #     WebDriverWait(driver, 40).until(ec.frame_to_be_available_and_switch_to_it(0))
     #     driver.switch_to.frame(0)
@@ -64,7 +64,7 @@ def navigate_to_google_page_on_mobile(driver):
 
 
 def search_keyword(driver, website_name):
-    print("function called search_keyword")
+    print("function called search_keyword ")
     WebDriverWait(driver, 40).until(ec.presence_of_element_located((
         By.XPATH, "//input[@name='q']")))
     search_text_box = driver.find_element(By.XPATH, "//input[@name='q']")

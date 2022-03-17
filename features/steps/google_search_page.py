@@ -39,8 +39,8 @@ def navigate_to_google_page(driver):
     print(driver.title)
     try:
         time.sleep(2)
-        # WebDriverWait(driver, 40).until(ec.frame_to_be_available_and_switch_to_it(0))
-        driver.switch_to.frame(0)
+        WebDriverWait(driver, 40).until((ec.frame_to_be_available_and_switch_to_it(0)))
+        # driver.switch_to.frame(0)
         tmp = driver.find_element(By.ID, "introAgreeButton")
         tmp.click()
         # driver.find_element_by_id("introAgreeButton").click()

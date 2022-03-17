@@ -34,16 +34,14 @@ import time
 
 def navigate_to_google_page(driver):
     driver.maximize_window()
-
-    time.sleep(3)
+    driver.get("https://google.com")
+    # time.sleep(2)
+    print(driver.title)
+    time.sleep(2)
     driver.switch_to.frame(0)
     driver.find_element(By.ID, "introAgreeButton").click()
     # driver.find_element_by_id("introAgreeButton").click()
     driver.switch_to.default_content()
-
-    driver.get("https://google.com")
-    # time.sleep(2)
-    print(driver.title)
 
     # try:
     #     WebDriverWait(driver, 40).until(ec.frame_to_be_available_and_switch_to_it(0))

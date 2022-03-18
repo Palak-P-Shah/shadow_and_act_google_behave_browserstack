@@ -37,17 +37,18 @@ def navigate_to_google_page(driver):
     driver.get("https://google.com")
     time.sleep(1)
     print(driver.title)
+    # try:
+    #     # time.sleep(2)
+    #     WebDriverWait(driver, 5).until((ec.frame_to_be_available_and_switch_to_it(0)))
+    #     # driver.switch_to.frame(0)
+    # except NoSuchFrameException:
+    #     print("No frame popup exists")
     try:
-        # time.sleep(2)
-        WebDriverWait(driver, 5).until((ec.frame_to_be_available_and_switch_to_it(0)))
-        # driver.switch_to.frame(0)
-    except NoSuchFrameException:
-        print("No frame popup exists")
-    try:
-        tmp = driver.find_element(By.ID, "introAgreeButton")
-        tmp.click()
+        # tmp = driver.find_element(By.ID, "introAgreeButton")
+        # tmp.click()
+        driver.find_element(By.ID, "L2AGLb").click()
         # driver.find_element_by_id("introAgreeButton").click()
-        driver.switch_to.default_content()
+        # driver.switch_to.default_content()
     except NoSuchElementException:
         print("No Such Element as no frame exists")
     # except NoSuchFrameException:
